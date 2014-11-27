@@ -1,0 +1,16 @@
+{
+    "name": "krymen/prophecy-examples",
+    "description": "Prophecy lightning talk @ Clearcode meetup",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Krzysztof Menżyk",
+            "email": "krzysztof@menzyk.net"
+        }
+    ],
+    "require": {
+        "phpunit/phpunit": "~4.3",
+        "phpspec/prophecy": "~1.3",
+        "phpspec/prophecy-phpunit": "~1.0"
+    }
+}
