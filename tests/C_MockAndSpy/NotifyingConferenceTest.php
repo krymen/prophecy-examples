@@ -12,7 +12,7 @@ use Prophecy\PhpUnit\ProphecyTestCase;
  * Mock verifies "indirect output" of the tested code
  * Stub verifies "indirect output" by asserting the expectations afterwards
  */
-class NotyfingConferenceTest extends ProphecyTestCase
+class NotifyingConferenceTest extends ProphecyTestCase
 {
     /** @test */
     public function it_notifies_about_adding_a_talk()
