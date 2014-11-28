@@ -5,6 +5,7 @@ namespace tests\Krymen\ProphecyExamples\A_Dummy;
 use Krymen\ProphecyExamples\A_Dummy\CountingConference;
 use Krymen\ProphecyExamples\Talk;
 use Prophecy\PhpUnit\ProphecyTestCase;
+use Prophecy\Prophecy\ObjectProphecy;
 
 /**
  * Dummy is a placeholder passed to the SUT, but never used
@@ -21,5 +22,15 @@ class CountingConferenceTest extends ProphecyTestCase
         $conference->addTalk($talk->reveal());
 
         $this->assertEquals(1, $conference->numberOfTalks());
+    }
+
+    /** @test */
+    public function prophecy_implements_interface_and_is_object_prophecy()
+    {
+        $talk = $this->prophesize(Talk::class);
+
+        $this->assertInstanceOf(ObjectProphecy::class, $talk);
+
+        $this->assertInstanceOf(Talk::class, $talk->reveal());
     }
 }
