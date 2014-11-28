@@ -6,6 +6,10 @@ use Krymen\ProphecyExamples\Dummy\Conference;
 use Krymen\ProphecyExamples\Dummy\Talk;
 use Prophecy\PhpUnit\ProphecyTestCase;
 
+/**
+ * Dummy is a placeholder passed to the SUT, but never used
+ * Tested code requires parameter but doesn't need to use it
+ */
 class ConferenceTest extends ProphecyTestCase
 {
     /**
