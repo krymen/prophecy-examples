@@ -1,6 +1,7 @@
 # Prophecy examples
 
-The project shows how to use [Prophecy](http://github.com/phpspec/prophecy) features along with PHPUnit.
+The project shows how to use [Prophecy](http://github.com/phpspec/prophecy) features
+along with [PHPUnit](https://github.com/sebastianbergmann/phpunit).
 The examples you can find in the tests emphasize usage of Test Doubles:
 
 * Dummy
