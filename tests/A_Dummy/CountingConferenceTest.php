@@ -14,6 +14,15 @@ use Prophecy\Prophecy\ObjectProphecy;
 class CountingConferenceTest extends ProphecyTestCase
 {
     /** @test */
+    public function prophecy_implements_interface_and_is_object_prophecy()
+    {
+        $talk = $this->prophesize(Talk::class);
+
+        $this->assertInstanceOf(ObjectProphecy::class, $talk);
+        $this->assertInstanceOf(Talk::class, $talk->reveal());
+    }
+
+    /** @test */
     public function it_adds_a_talk()
     {
         $conference = new CountingConference();
@@ -25,11 +34,18 @@ class CountingConferenceTest extends ProphecyTestCase
     }
 
     /** @test */
-    public function prophecy_implements_interface_and_is_object_prophecy()
+    public function talk_name_is_null()
     {
         $talk = $this->prophesize(Talk::class);
 
-        $this->assertInstanceOf(ObjectProphecy::class, $talk);
-        $this->assertInstanceOf(Talk::class, $talk->reveal());
+        $this->assertNull($talk->reveal()->name());
+    }
+
+    /** @test */
+    public function talk_has_only_name_method()
+    {
+        $talk = $this->prophesize(Talk::class);
+
+        $talk->reveal()->invalidMethod();
     }
 }
