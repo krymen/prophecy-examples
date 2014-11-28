@@ -1,24 +1,24 @@
 <?php
 
-namespace tests\Krymen\ProphecyExamples\Dummy;
+namespace tests\Krymen\ProphecyExamples\A_Dummy;
 
-use Krymen\ProphecyExamples\Dummy\Conference;
-use Krymen\ProphecyExamples\Dummy\Talk;
+use Krymen\ProphecyExamples\A_Dummy\ConferenceA;
+use Krymen\ProphecyExamples\A_Dummy\TalkA;
 use Prophecy\PhpUnit\ProphecyTestCase;
 
 /**
  * Dummy is a placeholder passed to the SUT, but never used
  * Tested code requires parameter but doesn't need to use it
  */
-class ConferenceTest extends ProphecyTestCase
+class ConferenceATest extends ProphecyTestCase
 {
     /**
      * @test
      */
     public function it_adds_a_talk()
     {
-        $conference = new Conference();
-        $talk       = $this->prophesize(Talk::class);
+        $conference = new ConferenceA();
+        $talk       = $this->prophesize(TalkA::class);
 
         $conference->addTalk($talk->reveal());
 
