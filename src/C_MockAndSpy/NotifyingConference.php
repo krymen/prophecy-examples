@@ -20,6 +20,6 @@ class NotifyingConference
     {
         $this->talks[] = $talk;
 
-        $this->notifier->notify('A talk has been added');
+        $this->notifier->notify('A talk has been added', $talk);
     }
 }
