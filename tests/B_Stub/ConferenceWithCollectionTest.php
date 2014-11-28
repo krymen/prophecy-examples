@@ -15,8 +15,8 @@ class ConferenceWithCollectionTest extends ProphecyTestCase
     public function it_adds_a_talk()
     {
         $conference = new ConferenceWithCollection();
+        $talk       = $this->prophesize(Talk::class);
 
-        $talk = $this->prophesize(Talk::class);
         $talk->name()->willReturn('first_talk');
 
         $conference->addTalk($talk->reveal());
@@ -28,8 +28,8 @@ class ConferenceWithCollectionTest extends ProphecyTestCase
     public function it_adds_a_talk2()
     {
         $conference = new ConferenceWithCollection();
+        $talk       = $this->prophesize(Talk::class);
 
-        $talk = $this->prophesize(Talk::class);
         $talk->name()->will(function () {
             return 'first_talk';
         });
@@ -47,8 +47,8 @@ class ConferenceWithCollectionTest extends ProphecyTestCase
     public function it_adds_a_talk3()
     {
         $conference = new ConferenceWithCollection();
+        $talk       = $this->prophesize(Talk::class);
 
-        $talk = $this->prophesize(Talk::class);
         $talk->name()->willThrow(\Exception::class);
 
         $conference->addTalk($talk->reveal());

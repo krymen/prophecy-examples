@@ -30,7 +30,6 @@ class CountingConferenceTest extends ProphecyTestCase
         $talk = $this->prophesize(Talk::class);
 
         $this->assertInstanceOf(ObjectProphecy::class, $talk);
-
         $this->assertInstanceOf(Talk::class, $talk->reveal());
     }
 }
