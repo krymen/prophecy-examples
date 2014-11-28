@@ -12,9 +12,7 @@ use Prophecy\PhpUnit\ProphecyTestCase;
  */
 class ConferenceATest extends ProphecyTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function it_adds_a_talk()
     {
         $conference = new ConferenceA();
