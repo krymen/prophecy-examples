@@ -2,7 +2,7 @@
 
 namespace Krymen\ProphecyExamples\C_MockAndSpy;
 
-interface NotifierC
+interface Notifier
 {
     public function notify($message);
 }

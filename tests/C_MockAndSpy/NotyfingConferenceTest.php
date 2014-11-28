@@ -2,24 +2,24 @@
 
 namespace tests\Krymen\ProphecyExamples\C_MockAndSpy;
 
-use Krymen\ProphecyExamples\C_MockAndSpy\ConferenceC;
-use Krymen\ProphecyExamples\C_MockAndSpy\NotifierC;
-use Krymen\ProphecyExamples\C_MockAndSpy\TalkC;
+use Krymen\ProphecyExamples\C_MockAndSpy\NotifyingConference;
+use Krymen\ProphecyExamples\C_MockAndSpy\Notifier;
+use Krymen\ProphecyExamples\Talk;
 use Prophecy\PhpUnit\ProphecyTestCase;
 
 /**
  * Mock verifies "indirect output" of the tested code
  * Stub verifies "indirect output" by asserting the expectations afterwards
  */
-class ConferenceCTest extends ProphecyTestCase
+class NotyfingConferenceTest extends ProphecyTestCase
 {
     /** @test */
     public function it_notifies_about_adding_a_talk()
     {
-        $notifier = $this->prophesize(NotifierC::class);
+        $notifier = $this->prophesize(Notifier::class);
 
-        $conference = new ConferenceC($notifier->reveal());
-        $talk = $this->prophesize(TalkC::class);
+        $conference = new NotifyingConference($notifier->reveal());
+        $talk = $this->prophesize(Talk::class);
 
         $notifier->notify('A talk has been added')->shouldBeCalled();
 
@@ -29,10 +29,10 @@ class ConferenceCTest extends ProphecyTestCase
     /** @test */
     public function it_notifies_about_adding_a_talk2()
     {
-        $notifier = $this->prophesize(NotifierC::class);
+        $notifier = $this->prophesize(Notifier::class);
 
-        $conference = new ConferenceC($notifier->reveal());
-        $talk = $this->prophesize(TalkC::class);
+        $conference = new NotifyingConference($notifier->reveal());
+        $talk = $this->prophesize(Talk::class);
 
         $conference->addTalk($talk->reveal());
 

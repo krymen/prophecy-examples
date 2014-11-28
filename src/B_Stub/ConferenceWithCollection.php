@@ -2,11 +2,13 @@
 
 namespace Krymen\ProphecyExamples\B_Stub;
 
-class ConferenceB
+use Krymen\ProphecyExamples\Talk;
+
+class ConferenceWithCollection
 {
     private $talks = [];
 
-    public function addTalk(TalkB $talk)
+    public function addTalk(Talk $talk)
     {
         $this->talks[$talk->name()] = $talk;
     }

@@ -2,21 +2,21 @@
 
 namespace tests\Krymen\ProphecyExamples\B_Stub;
 
-use Krymen\ProphecyExamples\B_Stub\ConferenceB;
-use Krymen\ProphecyExamples\B_Stub\TalkB;
+use Krymen\ProphecyExamples\B_Stub\ConferenceWithCollection;
+use Krymen\ProphecyExamples\Talk;
 use Prophecy\PhpUnit\ProphecyTestCase;
 
 /**
  * Stub provides "indirect output" to the tested code
  */
-class ConferenceBTest extends ProphecyTestCase
+class ConferenceWithCollectionTest extends ProphecyTestCase
 {
     /** @test */
     public function it_adds_a_talk()
     {
-        $conference = new ConferenceB();
+        $conference = new ConferenceWithCollection();
 
-        $talk = $this->prophesize(TalkB::class);
+        $talk = $this->prophesize(Talk::class);
         $talk->name()->willReturn('first_talk');
 
         $conference->addTalk($talk->reveal());

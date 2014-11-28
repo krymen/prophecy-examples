@@ -2,11 +2,13 @@
 
 namespace Krymen\ProphecyExamples\A_Dummy;
 
-class ConferenceA
+use Krymen\ProphecyExamples\Talk;
+
+class CountingConference
 {
     private $numberOfTalks = 0;
 
-    public function addTalk(TalkA $talk)
+    public function addTalk(Talk $talk)
     {
         $this->numberOfTalks++;
     }

@@ -2,19 +2,21 @@
 
 namespace Krymen\ProphecyExamples\C_MockAndSpy;
 
-class ConferenceC
+use Krymen\ProphecyExamples\Talk;
+
+class NotifyingConference
 {
-    /** @var NotifierC */
+    /** @var Notifier */
     private $notifier;
 
     private $talks = [];
 
-    public function __construct(NotifierC $notifier)
+    public function __construct(Notifier $notifier)
     {
         $this->notifier = $notifier;
     }
 
-    public function addTalk(TalkC $talk)
+    public function addTalk(Talk $talk)
     {
         $this->talks[] = $talk;
 
